@@ -1,0 +1,175 @@
+/* Animation Classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.3s forwards;
+}
+
+.animate-fade-in-delay-2 {
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.6s forwards;
+}
+
+.animate-slide-in {
+  animation: slideInUp 0.5s ease-out;
+}
+
+/* Element-specific animations */
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-primary, .btn-accent {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover, .btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active, .btn-accent:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Search area animation */
+.search-container .form-control {
+  transition: box-shadow 0.3s ease;
+}
+
+.search-container .form-control:focus {
+  box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.2);
+}
+
+/* Weather card animations */
+.weather-card {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+  background-color: #e1f5fe;
+}
+
+/* Attraction card image hover effect */
+.attraction-card img {
+  transition: transform 0.5s ease;
+}
+
+.attraction-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Loading animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid var(--primary-color);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+/* Placeholder pulse animation for content loading */
+@keyframes placeholderPulse {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.content-placeholder {
+  animation: placeholderPulse 1.5s infinite linear;
+  background: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-size: 800px 104px;
+  position: relative;
+}
+
+/* Add to itinerary button animation */
+.add-to-itinerary {
+  transition: all 0.3s ease;
+}
+
+.add-to-itinerary:hover {
+  background-color: var(--success-color);
+  color: white;
+}
+
+/* Itinerary drag animation */
+.itinerary-item-dragging {
+  background-color: var(--primary-light);
+  opacity: 0.8;
+  transform: rotate(1deg) scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+/* Card reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Badges hover effect */
+.badge {
+  transition: transform 0.2s ease;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+}
